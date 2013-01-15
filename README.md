@@ -1,3 +1,3 @@
 Javalabra
 =========
-Git test
+Vuoropohjainen strategiapeli
