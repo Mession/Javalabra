@@ -1,0 +1,4 @@
+Javalabra tuntikirjanpito:
+15.1. klo 18:00 - 20:00:
+Loin github käyttäjätunnuksen, testasin repositoryn toiminnan ja lopuksi
+tein ensimmäiset tehtävät.

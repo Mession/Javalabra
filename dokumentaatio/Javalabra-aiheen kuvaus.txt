@@ -1,0 +1,17 @@
+Aihe: Vuoropohjainen strategiapeli
+	Pelissä pelaaja tai pelaajat valitsevat 1-3 hahmoa, jotka sitten taistelevat vastakkain vuoroittain.
+Hahmoilla on erilaisia ominaisuuksia, ainakin nopeus, kesto, hyökkäyksen vahvuus ja puolustus.
+Nopeus määrää, missä järjestyksessä hahmot saavat vuoronsa. Kesto määrittelee, kuinka paljon hahmo voi ottaa vahinkoa
+ja puolustus taas vähentää otettua vahinkoa. Hahmojen taidot voivat joko tuottaa vahinkoa vastustajille tai parantaa
+muiden samalla puolella olevien hahmojen kestoa. Osa taidoista voi myös estää vastustajan vuoron tai parantaa
+omien puolulaisten ominaisuuksia yhden taistelun ajaksi.
+	Hahmoja on aluksi valittavissa vain rajoitetusti, mutta niitä vapautuu käyttöön pelaajan voitettua tarpeeksi
+monta taistelua. Alustavia hahmoja voisivat olla ainakin joulupukki, viikatemies, aave, pääsiäispupu, merirosvo, jne.
+Ajattelin, että peli olisi omaperäisempi, jos hahmot eivät olisi perinteisiä rpg-hahmoja kuten soturi, temppeliritari
+tai maagikko. Peli olisi käytännössä samantapainen kuin Game Boy:n Pokemon -pelien taistelut, paitsi että hahmoja on
+useampia kuin 2 samaan aikaan taistelussa ja hahmojen taidot ovat saaneet vaikutteita rpg-peleistä.
+
+Sovelluksen toimintoja:
+Kirjautuminen (tiedostosta haetaan, mitkä hahmot käyttäjällä on käytettävissä).
+Hahmojen ja kykyjen tarkastelu
+Taistelun aloittaminen (tämän jälkeen valitaan 1v1, 2v2 vai 3v3)
