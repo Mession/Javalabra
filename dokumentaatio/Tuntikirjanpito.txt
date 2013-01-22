@@ -2,3 +2,13 @@ Javalabra tuntikirjanpito:
 15.1. klo 18:00 - 20:00:
 Loin github k‰ytt‰j‰tunnuksen, testasin repositoryn toiminnan ja lopuksi
 tein ensimm‰iset teht‰v‰t.
+
+21.1. n. klo 17-20:
+Tein oleellisimmat luokat, j‰ljell‰ viel‰ turhia ja esim. taistelulogiikka ja vuorologiikka
+pahasti kesken.
+
+22.1. klo 7:00-8:00:
+Tein 10 testi‰, jotka vaadittiin 2. deadlineen.
+
+22.1. klo 20:00-20:45:
+Tein m‰‰rittelyvaiheen luokkakaavion ja pushasin koodin, testit ja luokkakaavion githubiin.
