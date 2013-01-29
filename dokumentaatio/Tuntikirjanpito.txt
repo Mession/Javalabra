@@ -12,3 +12,12 @@ Tein 10 testiä, jotka vaadittiin 2. deadlineen.
 
 22.1. klo 20:00-20:45:
 Tein määrittelyvaiheen luokkakaavion ja pushasin koodin, testit ja luokkakaavion githubiin.
+
+25.1. klo 9:00-13:00:
+Muokkasin peliä niin, ettei olekkaan joukkueita vaan ainoastaan yksi hahmo vs toinen (voi silti myöhemmin laajentaa, mutta
+nyt alkuun tuntui liian monimutkaiselta alkaa ohjelmoida joukkue vs joukkue taisteluita). Tein myös testaamista varten
+alkeellisen tekstikäyttöliittymän.
+
+29.1. klo 18:20-20:15:
+Tein testit uusiin ja muuttuneisiin luokkiin ja päivitin luokkakaavion. Jätin tarkoituksella testaamatta väliaikaisen
+TextUI:n, koska se ei tule kuitenkaan lopulliseen ohjelmaan.

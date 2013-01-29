@@ -1,8 +1,8 @@
 package javalabra.domain.tests;
 
 
+import javalabra.domain.Ability;
 import javalabra.domain.Santa;
-import javalabra.domain.Team;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,7 +11,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class SantaTest {
-    Team team;
     Santa santa;
     
     public SantaTest() {
@@ -27,8 +26,7 @@ public class SantaTest {
     
     @Before
     public void setUp() {
-        team = new Team("Test team");
-        santa = new Santa(team);
+        santa = new Santa();
     }
     
     @After
@@ -37,22 +35,22 @@ public class SantaTest {
 
     @Test
     public void konstruktoriAsettaaNimenOikein() {
-        assertEquals("Santa Claus", santa.getNimi());
+        assertEquals("Santa Claus", santa.getName());
     }
     
     @Test
     public void konstruktoriAsettaaKestonOikein() {
-        assertTrue(1300 == santa.getKesto());
+        assertTrue(1300 == santa.getMaxHealth());
     }
     
     @Test
     public void konstruktoriAsettaaNopeudenOikein() {
-        assertTrue(60 == santa.getNopeus());
+        assertTrue(60 == santa.getMaxSpeed());
     }
     
     @Test
     public void konstruktoriAsettaaDamagenOikein() {
-        assertTrue(90 == santa.getDamage());
+        assertTrue(90 == santa.getMaxDamage());
     }
     
     @Test
@@ -61,7 +59,57 @@ public class SantaTest {
     }
     
     @Test
-    public void naughtyToimii() {
-        assertTrue(150 == santa.naughty().use());
+    public void giftShowerDamageOikein() {
+        Ability testAbility = santa.giftShower();
+        assertTrue(testAbility.getDamage() == santa.getAtmDamage()*2);
     }
+    
+    @Test
+    public void giftShowerPowerCost() {
+        Ability testAbility = santa.giftShower();
+        assertTrue(testAbility.getPowerCost() == 0);
+    }
+    
+    @Test
+    public void giftShowerId() {
+        Ability testAbility = santa.giftShower();
+        assertTrue(testAbility.getId() == 0);
+    }
+    
+    @Test
+    public void xmasSpiritDamageOnNolla() {
+        Ability testAbility = santa.xmasSpirit();
+        assertTrue(testAbility.getDamage() == 0);
+    }
+    
+    @Test
+    public void xmasSpiritNoPowerCost() {
+        Ability testAbility = santa.xmasSpirit();
+        assertTrue(testAbility.getPowerCost() == 0);
+    }
+    
+    @Test
+    public void xmasSpiritId() {
+        Ability testAbility = santa.xmasSpirit();
+        assertTrue(testAbility.getId() == 1);
+    }
+    
+    @Test
+    public void slayRideDamageOikein() {
+        Ability testAbility = santa.slayRide();
+        assertTrue(testAbility.getDamage() == santa.getAtmDamage()*5);
+    }
+    
+    @Test
+    public void slayRidePowerCost() {
+        Ability testAbility = santa.slayRide();
+        assertTrue(testAbility.getPowerCost() == 1);
+    }
+    
+    @Test
+    public void slayRideId() {
+        Ability testAbility = santa.slayRide();
+        assertTrue(testAbility.getId() == 2);
+    }
+    
 }
