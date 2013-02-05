@@ -138,6 +138,7 @@ public class Battle {
             hero.setAtmPower(hero.getAtmPower()-1);
             enemy.setAtmPower(enemy.getAtmPower()+1);
             heal(hero,150);
+            damage(enemy,150);
             enemy.setAtmDamage(enemy.getAtmDamage()+20);
             hero.setAtmDamage(hero.getAtmDamage()-20);
         } else if (ability.getId() == 1 && hero.getAtmPower() <= 0) {
