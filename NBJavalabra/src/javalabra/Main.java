@@ -1,4 +1,6 @@
-
+/**
+ * Käynnistää käyttöliittymän
+ */
 package javalabra;
 
 import javalabra.UI.TextUI;

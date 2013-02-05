@@ -1,18 +1,29 @@
+/**
+ * Väliaikainen tekstikäyttöliittymä, joka huolehtii käyttäjien syötteiden lukemisesta
+ * ja käyttäjälle välitettävistä tiedoista
+ * Luokan metodeille ei ole yksityiskohtaisia JavaDoceja tai testejä, sillä luokka korvataan
+ * lähitulevaisuudessa graafisella käyttöliittymällä
+ */
 
 package javalabra.UI;
 
-import javalabra.domain.Ability;
-import javalabra.domain.Hero;
-import javalabra.domain.Santa;
-import javalabra.logiikka.Battle;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javalabra.domain.Ability;
+import javalabra.domain.Banker;
+import javalabra.domain.Hero;
+import javalabra.domain.Santa;
+import javalabra.domain.Snowman;
+import javalabra.logiikka.Battle;
 
 public class TextUI {
     private Battle battle;
     private Scanner lukija;
     private ArrayList<Hero> heroes;
     
+    /**
+     * Konstruktori
+     */
     public TextUI() {
         lukija = new Scanner(System.in);
         heroes = new ArrayList<Hero>();
@@ -20,6 +31,8 @@ public class TextUI {
     
     public void addHeroes() {
         heroes.add(new Santa());
+        heroes.add(new Snowman());
+        heroes.add(new Banker());
     }
     
     public void setBattle(Battle battle) {
@@ -33,9 +46,30 @@ public class TextUI {
             battle.round();
         }
         if (battle.checkIfAlive(battle.getPlayer())) {
+            situation();
             System.out.println("Victory for player 1!");
-        } else {
+        } else if (battle.checkIfAlive(battle.getPlayer2())) {
+            situation();
             System.out.println("Victory for player 2!");
+        } else {
+            situation();
+            System.out.println("It's a tie!");
+        }
+    }
+    
+    public void printBankerEffect(int id) {
+        if (id == 0) {
+            System.out.println("Your speculations yielded a huge profit! Damage increased, power refunded, enemy damaged");
+        }
+        if (id == 1) {
+            System.out.println("Not so bad, enemy damaged");
+        }
+        if (id == 2) {
+            System.out.println("Your investments are going sour. You take damage");
+        }
+        if (id == 3) {
+            System.out.println("How could you have known that it was all a scam? Invisible cars seemed legit from the get-go."
+                    + " You take damage and the enemy's health is increased");
         }
     }
     
@@ -46,9 +80,6 @@ public class TextUI {
         Hero player = chooseHero();
         heroes.remove(player);
         System.out.println("Choose a hero, player 2:");
-        if (heroes.isEmpty()) {
-            addHeroes();
-        }
         listHeroes();
         Hero player2 = chooseHero();
         player.createAbilities();
@@ -126,7 +157,7 @@ public class TextUI {
     }
     
     public void situation() {
-        System.out.println("\t\tHero\t\tHealth\t\tPower\tSpeed\tDamage\tDamage Reduction");
+        System.out.println("\t\tHero\tHealth\t\tPower\tSpeed\tDamage\tDamage Reduction");
         System.out.println("Player 1:\t"+heroStats(battle.getPlayer()));
         System.out.println("Player 2:\t"+heroStats(battle.getPlayer2()));
         System.out.println();
@@ -137,6 +168,9 @@ public class TextUI {
     }
     
     private String playerHP(Hero hero) {
+        if (hero.getAtmHealth() < 100 && hero.getAtmHealth() > -10) {
+            return hero.getAtmHealth()+"/"+hero.getMaxHealth()+"\t\t";
+        }
         return hero.getAtmHealth()+"/"+hero.getMaxHealth()+"\t";
     }
     

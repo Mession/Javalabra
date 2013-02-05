@@ -35,7 +35,7 @@ public class SantaTest {
 
     @Test
     public void konstruktoriAsettaaNimenOikein() {
-        assertEquals("Santa Claus", santa.getName());
+        assertEquals("Santa", santa.getName());
     }
     
     @Test

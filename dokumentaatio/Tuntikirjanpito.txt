@@ -1,23 +1,26 @@
 Javalabra tuntikirjanpito:
 15.1. klo 18:00 - 20:00:
-Loin github käyttäjätunnuksen, testasin repositoryn toiminnan ja lopuksi
-tein ensimmäiset tehtävät.
+Loin github kayttajatunnuksen, testasin repositoryn toiminnan ja lopuksi
+tein ensimmäiset tehtavat.
 
 21.1. n. klo 17-20:
-Tein oleellisimmat luokat, jäljellä vielä turhia ja esim. taistelulogiikka ja vuorologiikka
+Tein oleellisimmat luokat, jaljella viela turhia ja esim. taistelulogiikka ja vuorologiikka
 pahasti kesken.
 
 22.1. klo 7:00-8:00:
-Tein 10 testiä, jotka vaadittiin 2. deadlineen.
+Tein 10 testia, jotka vaadittiin 2. deadlineen.
 
 22.1. klo 20:00-20:45:
-Tein määrittelyvaiheen luokkakaavion ja pushasin koodin, testit ja luokkakaavion githubiin.
+Tein maarittelyvaiheen luokkakaavion ja pushasin koodin, testit ja luokkakaavion githubiin.
 
 25.1. klo 9:00-13:00:
-Muokkasin peliä niin, ettei olekkaan joukkueita vaan ainoastaan yksi hahmo vs toinen (voi silti myöhemmin laajentaa, mutta
-nyt alkuun tuntui liian monimutkaiselta alkaa ohjelmoida joukkue vs joukkue taisteluita). Tein myös testaamista varten
-alkeellisen tekstikäyttöliittymän.
+Muokkasin pelia niin, ettei olekkaan joukkueita vaan ainoastaan yksi hahmo vs toinen (voi silti myohemmin laajentaa, mutta
+nyt alkuun tuntui liian monimutkaiselta alkaa ohjelmoida joukkue vs joukkue taisteluita). Tein myos testaamista varten
+alkeellisen tekstikayttoliittyman.
 
 29.1. klo 18:20-20:15:
-Tein testit uusiin ja muuttuneisiin luokkiin ja päivitin luokkakaavion. Jätin tarkoituksella testaamatta väliaikaisen
+Tein testit uusiin ja muuttuneisiin luokkiin ja paivitin luokkakaavion. Jatin tarkoituksella testaamatta valiaikaisen
 TextUI:n, koska se ei tule kuitenkaan lopulliseen ohjelmaan.
+
+5.2. n. klo 13-20:
+Tein aluksi JavaDocin nykyisiin luokkiin. Sitten loin uudet luokat banker ja snowman. Meni kauemmin kuin olisi luullut. Tein niillekin JavaDocit. Tein ekan ajettavan jar filen. Sitten viela testit uusiin luokkiin. Lopuksi sekvenssikaaviot. Clean codessa viela parantamisen varaa, muttei aikaa nyt.
