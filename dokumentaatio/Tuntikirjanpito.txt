@@ -22,5 +22,5 @@ alkeellisen tekstikayttoliittyman.
 Tein testit uusiin ja muuttuneisiin luokkiin ja paivitin luokkakaavion. Jatin tarkoituksella testaamatta valiaikaisen
 TextUI:n, koska se ei tule kuitenkaan lopulliseen ohjelmaan.
 
-5.2. n. klo 13-20:
+5.2. n. klo 13-19:15:
 Tein aluksi JavaDocin nykyisiin luokkiin. Sitten loin uudet luokat banker ja snowman. Meni kauemmin kuin olisi luullut. Tein niillekin JavaDocit. Tein ekan ajettavan jar filen. Sitten viela testit uusiin luokkiin. Lopuksi sekvenssikaaviot. Clean codessa viela parantamisen varaa, muttei aikaa nyt. Pieni typo tokavikassa pushissa (deadline 3 vaikka piti olla deadline 4)
