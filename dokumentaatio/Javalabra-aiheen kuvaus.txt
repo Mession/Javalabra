@@ -1,16 +1,12 @@
 Aihe: Vuoropohjainen strategiapeli
-	Pelissä kaksi pelaajaa valitsevat kumpikin hahmon, jotka sitten taistelevat vastakkain vuoroittain.
-Hahmoilla on erilaisia ominaisuuksia: nopeus, kesto, hyökkäyksen vahvuus, puolustus ja voima.
-Nopeus määrää, missä järjestyksessä hahmot saavat vuoronsa. Kesto määrittelee, kuinka paljon hahmo voi ottaa vahinkoa
-ja puolustus taas vähentää otettua vahinkoa. Voimaa käytetiin kaikista voimakkaimpiin taitoihin. Hahmojen taidot voivat
-joko tuottaa vahinkoa vastustajalle tai parantaa oman hahmon ominaisuuksia.
-	Hahmoja on aluksi valittavissa vain rajoitetusti, mutta niitä vapautuu käyttöön pelaajan voitettua tarpeeksi
-monta taistelua. Alustavia hahmoja voisivat olla ainakin joulupukki, viikatemies, pääsiäispupu, merirosvo, jne.
-Ajattelin, että peli olisi omaperäisempi, jos hahmot eivät olisi perinteisiä rpg-hahmoja kuten soturi, temppeliritari
-tai maagikko. Peli olisi käytännössä samantapainen kuin Game Boy:n Pokemon -pelien taistelut sillä lisäyksellä, että
-hahmojen taidot ovat saaneet vaikutteita rpg-peleistä.
+	Pelissa kaksi pelaajaa valitsevat kumpikin hahmon, jotka sitten taistelevat vastakkain vuoroittain.
+Hahmoilla on erilaisia ominaisuuksia: nopeus, kesto, hyokkayksen vahvuus, puolustus ja voima.
+Nopeus maaraa, missa jarjestyksessa hahmot saavat vuoronsa. Kesto maarittelee, kuinka paljon hahmo voi ottaa vahinkoa
+ja puolustus taas vahentaa otettua vahinkoa. Voimaa kaytetaan kaikista voimakkaimpiin taitoihin. Hahmojen taidot voivatj oko tuottaa vahinkoa vastustajalle tai parantaa oman hahmon ominaisuuksia.
+	Alustavia hahmoja voisivat olla ainakin joulupukki, viikatemies, paasiaispupu, merirosvo, jne.
+Ajattelin, etta peli olisi mielenkiintoisempi, jos hahmot eivat olisi perinteisia rpg-hahmoja kuten soturi, temppeliritari tai maagikko. Peli olisi kaytannossa samantapainen kuin Game Boy:n Pokemon -pelien taistelut silla lisayksella, etta
+hahmojen taidot ovat saaneet vaikutteita rpg-peleista.
 
 Sovelluksen toimintoja:
-Kirjautuminen (tiedostosta haetaan, mitkä hahmot käyttäjällä on käytettävissä).
-Hahmojen ja kykyjen tarkastelu
+Hahmojen ja kykyjen tarkastelu / Ohjeet
 Taistelun aloittaminen
