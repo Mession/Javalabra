@@ -1,11 +1,13 @@
 
 package javalabra.UI;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import javalabra.domain.Banker;
 import javalabra.domain.Hero;
@@ -100,28 +102,29 @@ public class GUI implements Runnable {
     }
     
     public void createGameComponents(Container container) {
-        BoxLayout frameLayout = new BoxLayout(container, BoxLayout.X_AXIS);
+        //Layout frameLayout = new BoxLayout(container, BoxLayout.X_AXIS);
+        GridLayout frameLayout = new GridLayout(1,3);
         container.setLayout(frameLayout);
         
         JPanel left = createPlayerGamePanel(1);
-        left.setAlignmentX(Component.LEFT_ALIGNMENT);
+        //left.setAlignmentX(Component.LEFT_ALIGNMENT);
         
         JPanel mid = createMiddleGamePanel();
-        mid.setAlignmentX(Component.CENTER_ALIGNMENT);
+        //mid.setAlignmentX(Component.CENTER_ALIGNMENT);
         
         JPanel right = createPlayerGamePanel(2);
-        right.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        //right.setAlignmentX(Component.RIGHT_ALIGNMENT);
         
-        JPanel filler1 = new JPanel();
-        filler1.setBorder(BorderFactory.createEmptyBorder());
+        //JPanel filler1 = new JPanel();
+        //filler1.setBorder(BorderFactory.createEmptyBorder());
         
-        JPanel filler2 = new JPanel();
-        filler1.setBorder(BorderFactory.createEmptyBorder());
+        //JPanel filler2 = new JPanel();
+        //filler1.setBorder(BorderFactory.createEmptyBorder());
         
         container.add(left);
-        container.add(filler1);
+        //container.add(filler1);
         container.add(mid);
-        container.add(filler2);
+        //container.add(filler2);
         container.add(right);
     }
     
@@ -149,7 +152,7 @@ public class GUI implements Runnable {
         JPanel log = new JPanel();
         BoxLayout panelLayout = new BoxLayout(log, BoxLayout.Y_AXIS);
         log.setLayout(panelLayout);
-        log.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.black), BorderFactory.createEmptyBorder(25, 25, 25, 25)));
+        log.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.black), BorderFactory.createEmptyBorder(10, 10, 10, 10)));
         JLabel title = new JLabel("Combat log");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
         JLabel filler = new JLabel();
