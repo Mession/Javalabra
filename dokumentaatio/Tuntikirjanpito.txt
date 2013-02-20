@@ -27,3 +27,10 @@ Tein aluksi JavaDocin nykyisiin luokkiin. Sitten loin uudet luokat banker ja sno
 
 12.2. klo 16-20:
 Tein graafisen kayttoliittyman rungon (ilman actionlistenereita jne). Sitten tein sekvenssikaavion abilityn kayttamisesta.
+
+13.2. klo 8-9:
+Muokkasin vahan graafista kayttoliittymaa.
+
+20.2. klo 21-1:
+Tein graafisen kayttoliittyman demovalmiiksi, koodi on viela huonoa mutta ainakin toimii.
+
