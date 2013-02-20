@@ -1,9 +1,8 @@
+package javalabra.domain;
+
 /**
  * Luokka määrää, mitä tietoja sankareiden taidoille pitää määritellä
  */
-
-package javalabra.domain;
-
 public class Ability {
     /**
      * Kertoo, kuinka paljon vahinkoa taito tekee

@@ -1,11 +1,10 @@
-/**
- * Luokka määrää pankkiirin taidot ja ominaisuudet
- */
-
 package javalabra.domain;
 
 import java.util.ArrayList;
 
+/**
+ * Luokka määrää pankkiirin taidot ja ominaisuudet
+ */
 public class Banker extends Hero {
     
     /**

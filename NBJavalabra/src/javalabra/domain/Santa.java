@@ -1,11 +1,10 @@
-/**
- * Luokka määrää joulupukin taidot ja ominaisuudet
- */
-
 package javalabra.domain;
 
 import java.util.ArrayList;
 
+/**
+ * Luokka määrää joulupukin taidot ja ominaisuudet
+ */
 public class Santa extends Hero {
     
     /**

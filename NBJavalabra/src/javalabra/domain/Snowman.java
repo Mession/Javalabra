@@ -1,11 +1,10 @@
-/**
- * Luokka määrää lumiukon taidot ja ominaisuudet
- */
-
 package javalabra.domain;
 
 import java.util.ArrayList;
 
+/**
+ * Luokka määrää lumiukon taidot ja ominaisuudet
+ */
 public class Snowman extends Hero {
     
     /**

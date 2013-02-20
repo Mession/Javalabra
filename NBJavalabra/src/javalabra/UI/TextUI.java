@@ -1,10 +1,3 @@
-/**
- * Väliaikainen tekstikäyttöliittymä, joka huolehtii käyttäjien syötteiden lukemisesta
- * ja käyttäjälle välitettävistä tiedoista
- * Luokan metodeille ei ole yksityiskohtaisia JavaDoceja tai testejä, sillä luokka korvataan
- * lähitulevaisuudessa graafisella käyttöliittymällä
- */
-
 package javalabra.UI;
 
 import java.util.ArrayList;
@@ -16,6 +9,12 @@ import javalabra.domain.Santa;
 import javalabra.domain.Snowman;
 import javalabra.logiikka.Battle;
 
+/**
+ * Väliaikainen tekstikäyttöliittymä, joka huolehtii käyttäjien syötteiden lukemisesta
+ * ja käyttäjälle välitettävistä tiedoista
+ * Luokan metodeille ei ole yksityiskohtaisia JavaDoceja tai testejä, sillä luokka korvataan
+ * lähitulevaisuudessa graafisella käyttöliittymällä
+ */
 public class TextUI {
     private Battle battle;
     private Scanner lukija;
@@ -43,7 +42,7 @@ public class TextUI {
         start();
         while(battle.checkIfAlive(battle.getPlayer()) && battle.checkIfAlive(battle.getPlayer2())) {
             System.out.println("Round "+battle.getRoundNumber()+"\n");
-            battle.round();
+//            battle.round();
         }
         if (battle.checkIfAlive(battle.getPlayer())) {
             situation();

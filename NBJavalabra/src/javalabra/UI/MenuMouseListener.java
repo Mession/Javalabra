@@ -8,23 +8,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
+/**
+ * Käsittelee hiirenklikkaukset menu:ssa
+ */
 public class MenuMouseListener implements ActionListener {
     private JButton startFight;
     private JButton instructions;
     private GUI gui;
-    private Container container;
     
     public MenuMouseListener(JButton startFight, JButton instructions, GUI gui) {
         this.startFight = startFight;
         this.instructions = instructions;
         this.gui = gui;
-        this.container = gui.getFrame().getContentPane();
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == startFight) {
-            gui.createGameUI();
+            gui.startGame(1);
         }
         if (ae.getSource() == instructions) {
             gui.createInstructionUI();

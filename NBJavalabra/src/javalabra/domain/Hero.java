@@ -1,11 +1,10 @@
-/**
- * Luokka määrää, mitä metodeita ja ominaisuuksia jokaisella herolla tulee olla
- */
-
 package javalabra.domain;
 
 import java.util.ArrayList;
 
+/**
+ * Luokka määrää, mitä metodeita ja ominaisuuksia jokaisella herolla tulee olla
+ */
 public abstract class Hero {
     /**
      * Sankarin nimi
@@ -55,7 +54,7 @@ public abstract class Hero {
      * Sisältää sankarin taidot
      */
     private ArrayList<Ability> abilities;
-    
+
     /**
      * Konstruktori
      */

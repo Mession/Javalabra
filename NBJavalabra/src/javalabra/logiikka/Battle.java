@@ -1,10 +1,3 @@
-/**
- * Luokka hoitaa taisteluiden logiikkapuolen, esimerkiksi kierroksen tapahtumat
- * ja pelaajan valitsemien taitojen(ability) seuraukset (kuten vastustajan tai oman
- * heron ominaisuuksien muokkaamisen)
- */
-
-
 package javalabra.logiikka;
 
 import java.util.Random;
@@ -15,6 +8,11 @@ import javalabra.UI.TextUI;
 import javalabra.domain.Banker;
 import javalabra.domain.Snowman;
 
+/**
+ * Luokka hoitaa taisteluiden logiikkapuolen, esimerkiksi kierroksen tapahtumat
+ * ja pelaajan valitsemien taitojen(ability) seuraukset (kuten vastustajan tai oman
+ * heron ominaisuuksien muokkaamisen)
+ */
 public class Battle {
     /**
      * Ensimmäinen pelaaja
@@ -37,6 +35,8 @@ public class Battle {
      */
     private Random random;
     
+    private boolean player1turn;
+    
     /**
      * Konstruktori
      */
@@ -52,31 +52,35 @@ public class Battle {
      * Hoitaa yhden kierroksen asiat: käytännössä siis tulostaa tilanteen ja antaa
      * vuorot pelaajille
      */
-    public void round() {
-        roundCount++;
-        ui.situation();
-        boolean playerHadTurn = false;
-        if (player.getAtmSpeed() >= player2.getAtmSpeed()) {
-            turn(player,player2);
-            playerHadTurn = true;
-        } else {
-            turn(player2,player);
-        }
-        if (!playerHadTurn) {
-            turn(player,player2);
-        } else {
-            turn(player2,player);
-        }
-    }
+//    public void round() {
+//        roundCount++;
+//        //ui.situation();
+//        boolean playerHadTurn = false;
+//        if (player.getAtmSpeed() >= player2.getAtmSpeed()) {
+//            turn(player,player2);
+//            playerHadTurn = true;
+//        } else {
+//            turn(player2,player);
+//        }
+//        if (!playerHadTurn) {
+//            turn(player,player2);
+//        } else {
+//            turn(player2,player);
+//        }
+//    }
     
     /**
      * Kysyy pelaajalta taidon, tarkistaa taidon vaikutukset ja varmistaa, että
      * kumpikin sankari on korkeintaan maksimikestossa
      */
-    public void turn(Hero player, Hero enemy) {
-        Ability whichAbility = ui.turn(player);
-        checkEffect(player,enemy,whichAbility);
-        reduceHealthToMax(player, enemy);
+//    public void turn(Hero player, Hero enemy) {
+//        Ability whichAbility = ui.turn(player);
+//        checkEffect(player,enemy,whichAbility);
+//        reduceHealthToMax(player, enemy);
+//    }
+    public void turn(Hero player, Hero enemy, Ability ability) {
+        checkEffect(player,enemy,ability);
+        reduceHealthToMax(player,enemy);
     }
     
     /**
@@ -142,7 +146,7 @@ public class Battle {
             enemy.setAtmDamage(enemy.getAtmDamage()+20);
             hero.setAtmDamage(hero.getAtmDamage()-20);
         } else if (ability.getId() == 1 && hero.getAtmPower() <= 0) {
-            ui.wastedTurn();
+            //ui.wastedTurn();
         } else if (ability.getId() == 2 && hero.getAtmPower() > 0) {
             hero.setAtmPower(hero.getAtmPower()-1);
             int effect = random.nextInt(100);
@@ -150,20 +154,20 @@ public class Battle {
                 hero.setAtmPower(hero.getAtmPower()+1);
                 hero.setAtmDamage(hero.getAtmDamage()+50);
                 damage(enemy,hero.getAtmDamage()*4);
-                ui.printBankerEffect(0);
+                //ui.printBankerEffect(0);
             } else if (effect > 49) {
                 damage(enemy,hero.getAtmDamage()*2);
-                ui.printBankerEffect(1);
+                //ui.printBankerEffect(1);
             } else if (effect > 14) {
                 damage(hero,enemy.getAtmDamage()*2);
-                ui.printBankerEffect(2);
+                //ui.printBankerEffect(2);
             } else if (effect < 15) {
                 damage(hero,enemy.getAtmDamage()*2);
                 heal(enemy,hero.getAtmDamage());
-                ui.printBankerEffect(3);
+                //ui.printBankerEffect(3);
             }
         } else if (ability.getId() == 2 && hero.getAtmPower() <= 0) {
-            ui.wastedTurn();
+            //ui.wastedTurn();
         }
     }
     
@@ -179,7 +183,7 @@ public class Battle {
             hero.setAtmPower(hero.getAtmPower()-1);
             heal(hero,ability);
         } else if (ability.getId() == 1 && hero.getAtmPower() <= 0) {
-            ui.wastedTurn();
+            //ui.wastedTurn();
         } else if (ability.getId() == 2 && hero.getAtmPower() > 0) {
             hero.setAtmPower(hero.getAtmPower()-1);
             if (enemy.getAtmSpeed() >= 0) {
@@ -188,7 +192,7 @@ public class Battle {
                 damage(enemy,hero.getAtmDamage()*7);
             }
         } else if (ability.getId() == 2 && hero.getAtmPower() <= 0) {
-            ui.wastedTurn();
+            //ui.wastedTurn();
         }
     }
     
@@ -203,7 +207,7 @@ public class Battle {
             hero.setAtmPower(hero.getAtmPower()-1);
             damage(enemy,ability);
         } else if (ability.getId() == 2 && hero.getAtmPower() <= 0) {
-            ui.wastedTurn();
+            //ui.wastedTurn();
         } else if (ability.getId() == 0) {
             damage(enemy,ability);
         }
@@ -233,6 +237,28 @@ public class Battle {
         return false;
     }
     
+    public boolean checkIfEnds() {
+        if (checkIfAlive(player) && checkIfAlive(player2)) {
+            return false;
+        }
+        return true;
+    }
+    
+    /**
+     * Tarkistaa voittajan, palauttaa 1 jos pelaaja 1 voitti, 2 jos pelaaja 2 voitti,
+     * 0 jos tuli tasapeli ja -1 jos peli ei ole vielä ohi
+     */
+    public int checkWinner() {
+        if (player.getAtmHealth() > 0 && player2.getAtmHealth() <= 0) {
+            return 1;
+        } else if (player.getAtmHealth() <= 0 && player2.getAtmHealth() > 0) {
+            return 2;
+        } else if (player.getAtmHealth() <= 0 && player2.getAtmHealth() <= 0) {
+            return 0;
+        }
+        return -1;
+    }
+    
     public int getRoundNumber() {
         return this.roundCount;
     }
@@ -245,4 +271,34 @@ public class Battle {
         return player2;
     }
     
+    public void setPlayer1(Hero player) {
+        this.player = player;
+    }
+    
+    public void setPlayer2(Hero player) {
+        this.player2 = player;
+    }
+    
+    public boolean getTurn() {
+        return player1turn;
+    }
+    
+    public void setTurn(boolean turn) {
+        this.player1turn = turn;
+    }
+    
+    public void setStartingHero() {
+        if (player.getAtmSpeed() > player2.getAtmSpeed()) {
+            setTurn(true);
+        } else if (player2.getAtmSpeed() > player.getAtmSpeed()) {
+            setTurn(false);
+        } else {
+            int i = random.nextInt(2);
+            if (i == 0) {
+                setTurn(true);
+            } else {
+                setTurn(false);
+            }
+        }
+    }
 }
