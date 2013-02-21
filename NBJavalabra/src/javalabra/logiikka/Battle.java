@@ -1,11 +1,12 @@
 package javalabra.logiikka;
 
 import java.util.Random;
+import javalabra.UI.GUI;
+import javalabra.UI.TextUI;
 import javalabra.domain.Ability;
+import javalabra.domain.Banker;
 import javalabra.domain.Hero;
 import javalabra.domain.Santa;
-import javalabra.UI.TextUI;
-import javalabra.domain.Banker;
 import javalabra.domain.Snowman;
 
 /**
@@ -25,11 +26,7 @@ public class Battle {
     /**
      * Käytettävä käyttöliittymä
      */
-    private TextUI ui;
-    /**
-     * Kertoo monesko kierros on menossa, jotta se voidaan ilmoittaa kierroksen alussa
-     */
-    private int roundCount;
+    private GUI gui;
     /**
      * Random tarvitaan joidenkin sankareiden taitoja varten
      */
@@ -40,12 +37,11 @@ public class Battle {
     /**
      * Konstruktori
      */
-    public Battle(Hero player, Hero player2, TextUI ui) {
+    public Battle(Hero player, Hero player2, GUI gui) {
         this.player = player;
         this.player2 = player2;
-        this.ui = ui;
-        this.roundCount = 1;
         this.random = new Random();
+        this.gui = gui;
     }
     
     /**
@@ -257,10 +253,6 @@ public class Battle {
             return 0;
         }
         return -1;
-    }
-    
-    public int getRoundNumber() {
-        return this.roundCount;
     }
     
     public Hero getPlayer() {

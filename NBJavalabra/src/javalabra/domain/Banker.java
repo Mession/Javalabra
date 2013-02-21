@@ -42,7 +42,7 @@ public class Banker extends Hero {
      */
     @Override
     public void createAbilities() {
-        ArrayList<Ability> abilities = this.getAbilities();
+        ArrayList<Ability> abilities = new ArrayList<Ability>();
         abilities.add(profit());
         abilities.add(trade());
         abilities.add(speculate());

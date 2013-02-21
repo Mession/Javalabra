@@ -41,7 +41,7 @@ public class TextUI {
     public void begin() {
         start();
         while(battle.checkIfAlive(battle.getPlayer()) && battle.checkIfAlive(battle.getPlayer2())) {
-            System.out.println("Round "+battle.getRoundNumber()+"\n");
+//            System.out.println("Round "+battle.getRoundNumber()+"\n");
 //            battle.round();
         }
         if (battle.checkIfAlive(battle.getPlayer())) {
@@ -84,7 +84,7 @@ public class TextUI {
         player.createAbilities();
         player2.createAbilities();
         System.out.println("Let the battle begin!");
-        battle = new Battle(player,player2,this);
+        //battle = new Battle(player,player2,this);
     }
     
     public Ability turn(Hero hero) {

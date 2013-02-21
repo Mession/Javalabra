@@ -41,7 +41,7 @@ public class Snowman extends Hero {
      */
     @Override
     public void createAbilities() {
-        ArrayList<Ability> abilities = this.getAbilities();
+        ArrayList<Ability> abilities = new ArrayList<Ability>();
         abilities.add(snowball());
         abilities.add(eatNose());
         abilities.add(snowstorm());

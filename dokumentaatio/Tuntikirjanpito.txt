@@ -34,3 +34,6 @@ Muokkasin vahan graafista kayttoliittymaa.
 20.2. klo 21-1:
 Tein graafisen kayttoliittyman demovalmiiksi, koodi on viela huonoa mutta ainakin toimii.
 
+21.2. klo 8:45-11:35:
+Parantelin graafista kayttoliittymaa (refaktorointia ja esim. uusi peli nappula).
+

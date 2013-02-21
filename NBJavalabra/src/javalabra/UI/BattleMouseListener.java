@@ -7,9 +7,8 @@ import javalabra.domain.Ability;
 import javalabra.domain.Hero;
 import javalabra.logiikka.Battle;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JFrame;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 /**
  * Käsittelee hiirenklikkaukset taistelunäkymässä
@@ -36,63 +35,57 @@ public class BattleMouseListener implements ActionListener {
         this.log = log;
         this.battle = gui.getBattle();
     }
+    
+    public void afterAction(boolean changeTurn) {
+        gui.getFrame().getContentPane().removeAll();
+        gui.refreshPlayerPanel(gui.getFrame().getContentPane());
+        battle.setTurn(changeTurn);
+        gui.endBattle();
+    }
+    
+    public void announceAction(Hero hero, Ability ability, int player) {
+        String announce = hero.getName() + " (player " + player + ") used " + ability.getName();
+        gui.writeToLog(announce);
+    }
+    
+    public void useAbility(int whichAbility, int whoseTurn) {
+        Hero hero = battle.getPlayer();
+        Hero enemy = battle.getPlayer2();
+        if (whoseTurn == 2) {
+            hero = battle.getPlayer2();
+            enemy = battle.getPlayer();
+        }
+        
+        Ability ability = hero.getAbilities().get(whichAbility);
+        announceAction(hero, ability, whoseTurn);
+        battle.turn(hero, enemy, ability);
+        
+        if (battle.getTurn()) {
+            afterAction(false);
+        } else {
+            afterAction(true);
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == p1a1 && battle.getTurn()) {
-            Ability ability = battle.getPlayer().getAbilities().get(0);
-            String addition = battle.getPlayer().getName() + " (player 1)" + " used " + ability.getName();
-            log.setText(log.getText() + addition + "\n");
-            battle.turn(battle.getPlayer(), battle.getPlayer2(), ability);
-            gui.getFrame().getContentPane().removeAll();
-            gui.refreshPlayerPanel(gui.getFrame().getContentPane());
-            battle.setTurn(false);
-            gui.endBattle();
+            useAbility(0,1);
         }
         if (ae.getSource() == p1a2 && battle.getTurn()) {
-            String addition = battle.getPlayer().getName() + " (player 1)"  + " used " + battle.getPlayer().getAbilities().get(1).getName();
-            log.setText(log.getText() + addition + "\n");
-            battle.turn(battle.getPlayer(), battle.getPlayer2(), battle.getPlayer().getAbilities().get(1));
-            gui.getFrame().getContentPane().removeAll();
-            gui.refreshPlayerPanel(gui.getFrame().getContentPane());
-            battle.setTurn(false);
-            gui.endBattle();
+            useAbility(1,1);
         }
         if (ae.getSource() == p1a3 && battle.getTurn()) {
-            String addition = battle.getPlayer().getName() + " (player 1)"  + " used " + battle.getPlayer().getAbilities().get(2).getName();
-            log.setText(log.getText() + addition + "\n");
-            battle.turn(battle.getPlayer(), battle.getPlayer2(), battle.getPlayer().getAbilities().get(2));
-            gui.getFrame().getContentPane().removeAll();
-            gui.refreshPlayerPanel(gui.getFrame().getContentPane());
-            battle.setTurn(false);
-            gui.endBattle();
+            useAbility(2,1);
         }
         if (ae.getSource() == p2a1 && !battle.getTurn()) {
-            String addition = battle.getPlayer2().getName() + " (player 2)"  + " used " + battle.getPlayer2().getAbilities().get(0).getName();
-            log.setText(log.getText() + addition + "\n");
-            battle.turn(battle.getPlayer2(), battle.getPlayer(), battle.getPlayer2().getAbilities().get(0));
-            gui.getFrame().getContentPane().removeAll();
-            gui.refreshPlayerPanel(gui.getFrame().getContentPane());
-            battle.setTurn(true);
-            gui.endBattle();
+            useAbility(0,2);
         }
         if (ae.getSource() == p2a2 && !battle.getTurn()) {
-            String addition = battle.getPlayer2().getName() + " (player 2)"  + " used " + battle.getPlayer2().getAbilities().get(1).getName();
-            log.setText(log.getText() + addition + "\n");
-            battle.turn(battle.getPlayer2(), battle.getPlayer(), battle.getPlayer2().getAbilities().get(1));
-            gui.getFrame().getContentPane().removeAll();
-            gui.refreshPlayerPanel(gui.getFrame().getContentPane());
-            battle.setTurn(true);
-            gui.endBattle();
+            useAbility(1,2);
         }
         if (ae.getSource() == p2a3 && !battle.getTurn()) {
-            String addition = battle.getPlayer2().getName() + " (player 2)"  + " used " + battle.getPlayer2().getAbilities().get(2).getName();
-            log.setText(log.getText() + addition + "\n");
-            battle.turn(battle.getPlayer2(), battle.getPlayer(), battle.getPlayer2().getAbilities().get(2));
-            gui.getFrame().getContentPane().removeAll();
-            gui.refreshPlayerPanel(gui.getFrame().getContentPane());
-            battle.setTurn(true);
-            gui.endBattle();
+            useAbility(2,2);
         }
         
     }

@@ -40,7 +40,7 @@ public class Santa extends Hero {
      */
     @Override
     public void createAbilities() {
-        ArrayList<Ability> abilities = this.getAbilities();
+        ArrayList<Ability> abilities = new ArrayList<Ability>();
         abilities.add(giftShower());
         abilities.add(xmasSpirit());
         abilities.add(slayRide());
