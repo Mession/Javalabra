@@ -2,7 +2,6 @@ package javalabra.logiikka;
 
 import java.util.Random;
 import javalabra.UI.GUI;
-import javalabra.UI.TextUI;
 import javalabra.domain.Ability;
 import javalabra.domain.Banker;
 import javalabra.domain.Hero;
@@ -31,7 +30,9 @@ public class Battle {
      * Random tarvitaan joidenkin sankareiden taitoja varten
      */
     private Random random;
-    
+    /**
+     * Kertoo onko pelaajan 1 vuoro
+     */
     private boolean player1turn;
     
     /**
@@ -45,35 +46,9 @@ public class Battle {
     }
     
     /**
-     * Hoitaa yhden kierroksen asiat: käytännössä siis tulostaa tilanteen ja antaa
-     * vuorot pelaajille
-     */
-//    public void round() {
-//        roundCount++;
-//        //ui.situation();
-//        boolean playerHadTurn = false;
-//        if (player.getAtmSpeed() >= player2.getAtmSpeed()) {
-//            turn(player,player2);
-//            playerHadTurn = true;
-//        } else {
-//            turn(player2,player);
-//        }
-//        if (!playerHadTurn) {
-//            turn(player,player2);
-//        } else {
-//            turn(player2,player);
-//        }
-//    }
-    
-    /**
-     * Kysyy pelaajalta taidon, tarkistaa taidon vaikutukset ja varmistaa, että
+     * Tarkistaa taidon vaikutukset ja varmistaa, että
      * kumpikin sankari on korkeintaan maksimikestossa
      */
-//    public void turn(Hero player, Hero enemy) {
-//        Ability whichAbility = ui.turn(player);
-//        checkEffect(player,enemy,whichAbility);
-//        reduceHealthToMax(player, enemy);
-//    }
     public void turn(Hero player, Hero enemy, Ability ability) {
         checkEffect(player,enemy,ability);
         reduceHealthToMax(player,enemy);
@@ -142,7 +117,7 @@ public class Battle {
             enemy.setAtmDamage(enemy.getAtmDamage()+20);
             hero.setAtmDamage(hero.getAtmDamage()-20);
         } else if (ability.getId() == 1 && hero.getAtmPower() <= 0) {
-            //ui.wastedTurn();
+
         } else if (ability.getId() == 2 && hero.getAtmPower() > 0) {
             hero.setAtmPower(hero.getAtmPower()-1);
             int effect = random.nextInt(100);
@@ -150,20 +125,16 @@ public class Battle {
                 hero.setAtmPower(hero.getAtmPower()+1);
                 hero.setAtmDamage(hero.getAtmDamage()+50);
                 damage(enemy,hero.getAtmDamage()*4);
-                //ui.printBankerEffect(0);
             } else if (effect > 49) {
                 damage(enemy,hero.getAtmDamage()*2);
-                //ui.printBankerEffect(1);
             } else if (effect > 14) {
                 damage(hero,enemy.getAtmDamage()*2);
-                //ui.printBankerEffect(2);
             } else if (effect < 15) {
                 damage(hero,enemy.getAtmDamage()*2);
                 heal(enemy,hero.getAtmDamage());
-                //ui.printBankerEffect(3);
             }
         } else if (ability.getId() == 2 && hero.getAtmPower() <= 0) {
-            //ui.wastedTurn();
+
         }
     }
     
@@ -179,7 +150,7 @@ public class Battle {
             hero.setAtmPower(hero.getAtmPower()-1);
             heal(hero,ability);
         } else if (ability.getId() == 1 && hero.getAtmPower() <= 0) {
-            //ui.wastedTurn();
+
         } else if (ability.getId() == 2 && hero.getAtmPower() > 0) {
             hero.setAtmPower(hero.getAtmPower()-1);
             if (enemy.getAtmSpeed() >= 0) {
@@ -188,7 +159,7 @@ public class Battle {
                 damage(enemy,hero.getAtmDamage()*7);
             }
         } else if (ability.getId() == 2 && hero.getAtmPower() <= 0) {
-            //ui.wastedTurn();
+
         }
     }
     
@@ -203,7 +174,7 @@ public class Battle {
             hero.setAtmPower(hero.getAtmPower()-1);
             damage(enemy,ability);
         } else if (ability.getId() == 2 && hero.getAtmPower() <= 0) {
-            //ui.wastedTurn();
+
         } else if (ability.getId() == 0) {
             damage(enemy,ability);
         }

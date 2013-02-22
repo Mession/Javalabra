@@ -2,11 +2,14 @@ Aihe: Vuoropohjainen strategiapeli
 	Pelissa kaksi pelaajaa valitsevat kumpikin hahmon, jotka sitten taistelevat vastakkain vuoroittain.
 Hahmoilla on erilaisia ominaisuuksia: nopeus, kesto, hyokkayksen vahvuus, puolustus ja voima.
 Nopeus maaraa, missa jarjestyksessa hahmot saavat vuoronsa. Kesto maarittelee, kuinka paljon hahmo voi ottaa vahinkoa
-ja puolustus taas vahentaa otettua vahinkoa. Voimaa kaytetaan kaikista voimakkaimpiin taitoihin. Hahmojen taidot voivatj oko tuottaa vahinkoa vastustajalle tai parantaa oman hahmon ominaisuuksia.
-	Alustavia hahmoja voisivat olla ainakin joulupukki, viikatemies, paasiaispupu, merirosvo, jne.
-Ajattelin, etta peli olisi mielenkiintoisempi, jos hahmot eivat olisi perinteisia rpg-hahmoja kuten soturi, temppeliritari tai maagikko. Peli olisi kaytannossa samantapainen kuin Game Boy:n Pokemon -pelien taistelut silla lisayksella, etta
-hahmojen taidot ovat saaneet vaikutteita rpg-peleista.
+ja puolustus taas vahentaa otettua vahinkoa. Voimaa kaytetaan kaikista voimakkaimpiin taitoihin. Hahmojen taidot voivat joko tuottaa vahinkoa vastustajalle tai parantaa oman hahmon ominaisuuksia.
+	Hahmoja on tassa versiossa 3: joulupukki, lumiukko ja pankkiiri.
+	Peli on kaytannossa samantapainen kuin Game Boy:n Pokemon -pelien taistelut.
 
-Sovelluksen toimintoja:
-Hahmojen ja kykyjen tarkastelu / Ohjeet
+Ohjelman kayttajat:
+Kaksi pelaajaa
+
+Sovelluksen toimintoja (kummankin kayttajan):
 Taistelun aloittaminen
+Ohjeet
+Pelaaminen

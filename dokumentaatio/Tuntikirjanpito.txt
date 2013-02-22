@@ -37,3 +37,6 @@ Tein graafisen kayttoliittyman demovalmiiksi, koodi on viela huonoa mutta ainaki
 21.2. klo 8:45-11:35:
 Parantelin graafista kayttoliittymaa (refaktorointia ja esim. uusi peli nappula).
 
+22.2. klo 15-19:
+Tein viimeisen deadlinen juttuja.
+

@@ -1,0 +1,25 @@
+Kaytto-ohjeet:
+
+Aloittaminen ja sankarin valitseminen:
+Kun avaat pelin, olet menu nakymassa. Voit katsoa lyhyet ohjeet painamalla "instructions" nappia. Painamalla "start" nappia aloitat uuden pelin.
+Aluksi pelaaja 1 valitsee sankarin painamalla "Choose" nappia sen sankarin alapuolella, jonka haluaa valita.
+Sitten pelaaja 2 tekee saman uudessa nakymassa, joka aukeaa pelaajan 1 valittua sankarin.
+
+Pelin pelaaminen:
+Sankareiden valitsemisen jalkeen avautuu itse pelinakyma. Vasemmalla reunalla on pelaajan 1 sankarin kuva. Kuvan alla nakyy sankarin ominaisuudet.
+Keskella nakymaa on "Combat log", jossa nakyy ihan pelin alussa, kumman vuoro on. Vain se pelaaja, jonka vuoro on, voi kayttaa taitoja. Taitoja kaytetaan klikkaamalla oman sankarin ominaisuuksien alla olevia nappeja. Jos pelaaja, jonka vuoro on, yrittaa kayttaa omia taitojaan, ei tapahdu mitaan.
+Taidon kaytettya "Combat log"iin tulee lukemaan, kuka kaytti taidon ja mika taito kaytettiin. Combat login alin rivi siis myos samalla kertoo, kumman vuoro on.
+
+Sankarin ominaisuudet:
+Health eli kesto kertoo, onko sankari elossa. Jos health laskee nollaan tai alle, sankari kuolee ja vastustaja voittaa.
+Poweria eli voimaa kaytetaan parhaisiin taitoihin. Jos power laskee nollaan, sankari ei voi enaa kayttaa taitoja, jotka vaativat voimaa (napit, joita painamalla taito kaytettaisiin, eivat enaa toimi).
+Speed eli nopeus kertoo, kumpi aloittaa pelin. Lisaksi se vaikuttaa joihinkin taitoihin.
+Damage eli vahinko kertoo, kuinka paljon vahinkoa sankari aiheuttaa vastustajalle. Taidoissa on kuitenkin kertoimia, joten vahinko kertoo vain suhteellisesti aiheutetun vahingon maaran.
+Damage Reduction eli puolustus kertoo, kuinka paljon vahinkoa sankari ottaa vastaan. Esim. 10% puolustus tarkoittaa, etta jos vastustaja aiheuttaa 100 vahinkoa, sankari vastaanottaa vain 90. Puolustus ei voi laskea alle 0.
+
+Sankarin taidot:
+Laittamalla hiiren taitonappulan paalle nakee lyhyen selostuksen taidon vaikutuksista.
+
+Pelin voittaminen:
+Se pelaaja, jonka health laskee 0 tai alle ensimmaisena, haviaa pelin ja hanen vastustajansa voittaa. Jos kummankin pelaajan health laskee 0 tai alle saman taidon seurauksena, tulee tasapeli.
+

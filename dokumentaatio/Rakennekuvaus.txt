@@ -1,0 +1,10 @@
+Ohjelman rakennekuvaus:
+Abstrakti luokka Hero määrää, millainen sankarin tulee olla.
+
+Luokat Banker, Santa ja Snowman perivät tämän luokan, ja niistä voi tehdä ilmentymiä.
+
+Luokka Ability ilmentymät ovat sankarin taitoja. Yhdellä sankarilla on tasan 3 taitoa.
+
+Luokka Battle tuntee kaksi sankaria, jotka ovat siis pelaaja 1 ja pelaaja 2. Lisäksi Battle tuntee UI:n, jotta tietyt taistelun tapahtumat voivat vaikuttaa UI:n näkymään (esim. päivittää sankarin ominaisuudet -näkymän).
+
+Luokka GUI tuntee yhden Battle luokan ilmentymän, jotta voi kutsua tämän metodeita riippuen käyttäjän syötteestä (esim. käytä taito X). Lisäksi GUI tuntee rajattoman määrän sankareita valitsemista varten (käytännössä tuntee yhden ilmentymän jokaisesta Hero luokan perivästä luokasta).

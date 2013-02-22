@@ -12,10 +12,22 @@ import javax.swing.JButton;
  * Käsittelee hiirenklikkaukset menu:ssa
  */
 public class MenuMouseListener implements ActionListener {
+    /**
+     * Nappi, joka aloittaa taistelun
+     */
     private JButton startFight;
+    /**
+     * Nappi, joka avaa ohjenäkymän
+     */
     private JButton instructions;
+    /**
+     * Käyttöliittymä, jonka metodeita kutsutaan
+     */
     private GUI gui;
     
+    /**
+     * Konstruktori
+     */
     public MenuMouseListener(JButton startFight, JButton instructions, GUI gui) {
         this.startFight = startFight;
         this.instructions = instructions;

@@ -1,0 +1,6 @@
+Testausdokumentaatio:
+Testasin domain-pakkauksen jokaisen luokan lahes jokaisen metodin JUnit testeilla.
+Logiikkapuolen Battle-luokkaa testasin niilta osin JUnit testeilla kun oli mahdollista.
+Battlen metodeita, joita en osannut JUniteilla testata, testasin kasin.
+GUI:ta testasin vain kasin (en tieda miten sita voisi automaattisesti testata). Tama olikin hyva, silla alkuperaisessa GUI:ssa oli useampia bugeja (esim. jos pelaajat valitsevat saman sankarin, se on sama olio, joten taidot vaikuttavat kummankin olioon eika vain vastustajaan).
+Nykyisessa versiossa en ole huomannut mitaan bugeja.

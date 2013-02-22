@@ -14,16 +14,46 @@ import javax.swing.JTextArea;
  * Käsittelee hiirenklikkaukset taistelunäkymässä
  */
 public class BattleMouseListener implements ActionListener {
+    /**
+     * Käyttöliittymä, jonka metodeita kutsutaan klikkausten jälkeen
+     */
     private GUI gui;
+    /**
+     * Pelaajan 1 taito 1 -nappi
+     */
     private JButton p1a1;
+    /**
+     * Pelaajan 1 taito 2 -nappi
+     */
     private JButton p1a2;
+    /**
+     * Pelaajan 1 taito 3 -nappi
+     */
     private JButton p1a3;
+    /**
+     * Pelaajan 2 taito 1 -nappi
+     */
     private JButton p2a1;
+    /**
+     * Pelaajan 2 taito 2 -nappi
+     */
     private JButton p2a2;
+    /**
+     * Pelaajan 2 taito 3 -nappi
+     */
     private JButton p2a3;
+    /**
+     * Käytettävän UI:n "combat log", johon lisätään viesti käytetystä taidosta
+     */
     private JTextArea log;
+    /**
+     * Käytettävään UI:hin liittyvä taistelu, jonka metodeita kutsutaan käytettyjen taitojen seurauksina
+     */
     private Battle battle;
     
+    /**
+     * Konstruktori
+     */
     public BattleMouseListener(GUI gui, JButton p1a1, JButton p1a2, JButton p1a3, JButton p2a1, JButton p2a2, JButton p2a3, JTextArea log) {
         this.gui = gui;
         this.p1a1 = p1a1;
@@ -36,6 +66,11 @@ public class BattleMouseListener implements ActionListener {
         this.battle = gui.getBattle();
     }
     
+    /**
+     * Päivittää käyttöliittymän ulkoasun, jonka jälkeen päivittää taistelu luokan
+     * oliomuuttujan "player1turn" arvon oikeaksi (arvolla tarkastetaan, kumman pelaajan vuoro on)
+     * ja lopuksi tarkistaa, loppuiko peli
+     */
     public void afterAction(boolean changeTurn) {
         gui.getFrame().getContentPane().removeAll();
         gui.refreshPlayerPanel(gui.getFrame().getContentPane());
@@ -43,11 +78,17 @@ public class BattleMouseListener implements ActionListener {
         gui.endBattle();
     }
     
+    /**
+     * Ilmoittaa käyttäjälle käytetyn taidon
+     */
     public void announceAction(Hero hero, Ability ability, int player) {
         String announce = hero.getName() + " (player " + player + ") used " + ability.getName();
         gui.writeToLog(announce);
     }
     
+    /**
+     * Käsittelee taidon seuraukset
+     */
     public void useAbility(int whichAbility, int whoseTurn) {
         Hero hero = battle.getPlayer();
         Hero enemy = battle.getPlayer2();
@@ -67,6 +108,10 @@ public class BattleMouseListener implements ActionListener {
         }
     }
 
+    /**
+     * Kutsuu taidon seuraukset tarkistavaa metodia riippuen siitä, mitä nappia painettiin
+     * ja kenen vuoro on
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == p1a1 && battle.getTurn()) {

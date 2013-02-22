@@ -10,9 +10,21 @@ import javax.swing.JButton;
  * Käsittelee sankarinvalitsemisvaiheen hiirenklikkaukset
  */
 public class SelectionMouseListener implements ActionListener {
+    /**
+     * Nappi, josta tietty sankari valitaan
+     */
     private JButton choose;
+    /**
+     * Nappiin liittyvä sankari
+     */
     private Hero hero;
+    /**
+     * Käyttöliittymä, jonka metodeita kutsutaan napin painamisen jälkeen
+     */
     private GUI gui;
+    /**
+     * Pelaajan tunnus
+     */
     private int player;
     
     public SelectionMouseListener(JButton choose, Hero hero, GUI gui, int player) {

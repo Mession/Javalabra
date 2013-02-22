@@ -6,11 +6,26 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * Käsittelee uusi peli -nappulan klikkaukset
+ */
 public class NewGameButtonMouseListener implements ActionListener {
+    /**
+     * Nappi, jota painamalla uusi peli alkaa
+     */
     private JButton button;
+    /**
+     * Käyttöliittymä, jonka metodeita kutsutaan nappia painettua
+     */
     private GUI gui;
+    /**
+     * Ikkuna, joka sisältää uusi peli -napin
+     */
     private JFrame newGameFrame;
     
+    /**
+     * Konstruktori
+     */
     public NewGameButtonMouseListener(JButton button, GUI gui, JFrame newGameFrame) {
         this.button = button;
         this.gui = gui;

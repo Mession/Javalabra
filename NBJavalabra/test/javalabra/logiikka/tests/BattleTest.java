@@ -1,17 +1,16 @@
 
 package javalabra.logiikka.tests;
 
-import javalabra.UI.TextUI;
+import javalabra.UI.GUI;
 import javalabra.domain.Ability;
-import javalabra.domain.Hero;
 import javalabra.domain.Santa;
 import javalabra.logiikka.Battle;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class BattleTest {
     Battle battle;
@@ -28,7 +27,7 @@ public class BattleTest {
     
     @Before
     public void setUp() {
-        battle = new Battle(new Santa(),new Santa(),new TextUI());
+        battle = new Battle(new Santa(),new Santa(),new GUI());
     }
     
     @After
@@ -50,7 +49,6 @@ public class BattleTest {
     public void konstruktoriToimii() {
         assertTrue(battle.getPlayer() != null);
         assertTrue(battle.getPlayer2() != null);
-        assertTrue(battle.getRoundNumber() == 1);
     }
     
     @Test
