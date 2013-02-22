@@ -13,3 +13,7 @@ Sovelluksen toimintoja (kummankin kayttajan):
 Taistelun aloittaminen
 Ohjeet
 Pelaaminen
+
+Mita olisin lisannyt, jos olisi ollut aikaa:
+Lisaa heroja (Paasiaispupu, Viikatemies, Merirosvo, Ninja)
+Olisin tehnyt UI:sta paremman nakoisen, esim. kuvien background samanvarinen kuin UI:n background
