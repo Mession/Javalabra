@@ -37,7 +37,8 @@ public class NewGameButtonMouseListener implements ActionListener {
         if (ae.getSource() == button) {
             gui.getFrame().setVisible(false);
             newGameFrame.setVisible(false);
-            gui.run();
+            GUI gui2 = new GUI();
+            gui2.run();
         }
     }
 }
